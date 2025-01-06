@@ -1,18 +1,15 @@
-class Player {
+abstract class Player {
     private String name;
     private int age;
-    private Sport sport;
-    private int experience; // in years
+    private String position;
 
-    // Constructor
-    public Player(String name, int age, Sport sport, int experience) {
+    public Player(String name, int age, String position) {
         this.name = name;
         this.age = age;
-        this.sport = sport;
-        this.experience = experience;
+        this.position = position;
     }
 
-    // Getters and setters
+    //Getters and setters for attributes
     public String getName() {
         return name;
     }
@@ -29,25 +26,34 @@ class Player {
         this.age = age;
     }
 
-    public Sport getSport() {
-        return sport;
+    public String getPosition() {
+        return position;
     }
 
-    public void setSport(Sport sport) {
-        this.sport = sport;
+    public void setPosition(String position) {
+        this.position = position;
     }
 
-    public int getExperience() {
-        return experience;
-    }
+    // Abstract method to be implemented by subclasses
+    public abstract void play();
 
-    public void setExperience(int experience) {
-        this.experience = experience;
+    // Method to return a string representation of the player
+    @Override
+    public String toString() {
+        return "Player Name: " + name + ", Age: " + age + ", Position: " + position;
     }
 
     @Override
-    public String toString() {
-        return "Player{name='" + name + "', age=" + age + ", sport=" + sport + ", experience=" + experience + " years}";
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        player player = (player) obj;
+        return age == player.age && name.equals(player.getName()) && position.equals(player.getPosition());
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode() + position.hashCode() + Integer.hashCode(age);
     }
 }
 

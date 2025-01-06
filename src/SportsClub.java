@@ -1,10 +1,12 @@
+import java.util.List;
+
 class SportsClub {
     private String name;
     private String location;
     private int members;
 
     // Constructor
-    public SportsClub(String name, String location, int members) {
+    public SportsClub() {
         this.name = name;
         this.location = location;
         this.members = members;
@@ -38,5 +40,18 @@ class SportsClub {
     @Override
     public String toString() {
         return "SportsClub{name='" + name + "', location='" + location + "', members=" + members + "}";
+    }
+
+    public void addPlayer(BasketballPlayer basketballPlayer) {
+    }
+
+    public void displayPlayers() {
+    }
+
+    public List<player> getPlayersByPosition(String forward) {
+        return List.of();
+    }
+
+    public void sortPlayersByName() {
     }
 }
