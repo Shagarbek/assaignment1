@@ -1,57 +1,52 @@
-import java.util.List;
-
-class SportsClub {
-    private String name;
-    private String location;
-    private int members;
-
-    // Constructor
-    public SportsClub() {
-        this.name = name;
-        this.location = location;
-        this.members = members;
+//class SportsClub {
+//    private String name;
+//    private int members;
+//
+//    // Constructor
+//    public SportsClub(String name, String location, int members) {
+//        this.name = name;
+//        this.members = members;
+//    }
+//
+//    // Getters and setters
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//
+//    public int getMembers() {
+//        return members;
+//    }
+//
+//    public void setMembers(int members) {
+//        this.members = members;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "SportsClub{name='" + name + "', members=" + members + "}";
+//    }
+//}
+public class SportsClub extends Training {
+    public SportsClub(int members, String name) {
+        super(members, name);
     }
 
-    // Getters and setters
-    public String getName() {
-        return name;
+    public SportsClub(String s, String tomenaryk, int i) {
+        super(s, tomenaryk, 1);
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public int getMembers() {
-        return members;
-    }
-
-    public void setMembers(int members) {
-        this.members = members;
-    }
 
     @Override
-    public String toString() {
-        return "SportsClub{name='" + name + "', location='" + location + "', members=" + members + "}";
+    public void display() {
+        System.out.println("SportsClub details: " + this);
     }
 
-    public void addPlayer(BasketballPlayer basketballPlayer) {
-    }
-
-    public void displayPlayers() {
-    }
-
-    public List<player> getPlayersByPosition(String forward) {
-        return List.of();
-    }
-
-    public void sortPlayersByName() {
+    public void addPlayer(Player player) {
+        System.out.println("Players added: " + player);
     }
 }
